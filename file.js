@@ -41,9 +41,6 @@
 
          
 //     }
-
-
-
 fetch("file.json")
 .then(response => response.json())
 .then(data =>{
@@ -86,10 +83,17 @@ function showdataperssone(info){
 
 let deletelemnt = `<img id="delet" onclick="delet(this)"  src="img/icons8-supprimer-30.png" alt="">`
 let addtoformateur = false 
+let checkerclick = 0 ;
 document.getElementById("formateurplus").addEventListener("click",function(){
   addtoformateur = true
+  checkerclick = 1 ;
 })
+
+  
 document.getElementById("personnedata").addEventListener("click",function(e){
+  if(checkerclick ===1 ){
+
+  
   if(addtoformateur){
     let myelement = e.target.closest("#droit").children
     if(myelement[1].children[2].innerHTML == "formateur" || myelement[1].children[2].innerHTML == "formatrice"){
@@ -111,12 +115,23 @@ document.getElementById("personnedata").addEventListener("click",function(e){
     }
     addtoformateur = false
     }
+  }
+  
 })
+
+
 let addtofabrespo = false
+
 document.getElementById("rspofabrplus").addEventListener("click",function(e){
   addtofabrespo = true
+  checker = 2
+  
 })
+
 document.getElementById("personnedata").addEventListener("click",function(e){
+  if(checkerclick === 2){
+
+  
   if(addtofabrespo){
     let myelement = e.target.closest("#droit").children
     if(myelement[1].children[2].innerHTML == "Responsable de fabrique" ){
@@ -135,15 +150,18 @@ document.getElementById("personnedata").addEventListener("click",function(e){
     }
     addtofabrespo = false
     }
+  }
 })
+
 let addapprt = false;
 document.getElementById("apprenant").addEventListener("click",function(e){
   console.log(e.target)
+  checkerclick = 3
   addapprt = true
 })
 document.getElementById("personnedata").addEventListener("click",function(e){
+  if(checkerclick === 3 ){
   if(addapprt){
-    
     let myelement = e.target.closest("#droit").children
     if(myelement[1].children[2].innerHTML == "Aprenant" || myelement[1].children[2].innerHTML == "Aprenante" ){
 
@@ -152,18 +170,53 @@ document.getElementById("personnedata").addEventListener("click",function(e){
     }
     else{
       setTimeout(() => {
-        document.getElementById("headerapprenant").innerHTML = "you  can just  add responsable de fabric"
-        document.getElementById("headerapprenant").style.backgroundColor = "red"
+        document.getElementById("headerapprenant").innerHTML = "you  can just apprenants  "
+        document.getElementById("header").style.backgroundColor = "red"
             setTimeout(() => {
                 document.getElementById("headerapprenant").innerHTML = "Responsable de fabrique"
-                document.getElementById("headerapprenant").style.backgroundColor = "white"
+                document.getElementById("header").style.backgroundColor = "white"
               }, 1000 );
       }, 1000);
     }
     addapprt = false
     }
+  }
 })
+//  chef de project 
+let addchefdeproject = false
+document.getElementById("projectchefplus").addEventListener("click",function(e){
+  console.log(e.target)
+  checkerclick = 4
+  addchefdeproject = true
+})
+document.getElementById("personnedata").addEventListener("click",function(e){
+  if(checkerclick == 4){
 
+  
+  if(addchefdeproject){
+    
+    let myelement = e.target.closest("#droit").children
+    if(myelement[1].children[2].innerHTML == "Chef de Projet"){
+
+      document.getElementById("cardchefproject").appendChild(e.target.closest("#droit"))
+      e.target.closest("#droit").innerHTML += (deletelemnt)
+    }
+    else{
+      setTimeout(() => {
+        document.getElementById("headercherfproject").innerHTML = "you  can just add chef de project  "
+        document.getElementById("headercherfproject").style.backgroundColor = "red"
+            setTimeout(() => {
+                document.getElementById("headercherfproject").innerHTML = "chef de project"
+                document.getElementById("headercherfproject").style.backgroundColor = "white"
+              }, 1000 );
+      }, 1000);
+    }
+    addchefdeproject = false
+    }
+  }
+
+  })
+  
 function delet(that){
   document.getElementById("personnedata").appendChild(that.closest("#droit"))
   that.closest("#droit").removeChild(that)
