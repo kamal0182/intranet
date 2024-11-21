@@ -1,0 +1,83 @@
+.placeholder{
+    display: grid;
+    grid-template-columns: 1fr 400px;
+}
+.container {
+    padding: 10px;
+    border: 1px solid black  ;
+    display: grid   ;
+    grid-template-columns: 1fr  1fr;
+    row-gap: 20px ;
+   
+    column-gap: 20px ;
+    text-align: center;
+}
+.foramteur {
+    width: 100%;
+    display: flex ;
+    justify-content: center;
+}
+.header {
+    border: 1px solid black ;
+}
+.item {
+    border: 1px solid black;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+.plus {
+    cursor: pointer;
+}
+.persone1 {
+    border: 1px solid black;
+
+}
+.perssones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+#droit {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    column-gap: 20px;
+    
+} 
+img  {
+    width: 45px ;
+    height: 50px;
+   
+}
+#delet {
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    margin-bottom: 10px;
+}
+.datapersone {
+    
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20%  80% ;
+}
+.personne2  > * {
+    margin: 0;
+    padding: 0 ;
+}
+.foramteur{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: start;
+   
+}
+.cardformateur {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.element-container {
+    height: 100vh;
+}
