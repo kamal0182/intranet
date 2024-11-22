@@ -5,8 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    
+
+   
 </head>
 <body>
+    <div  class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add perssone</h5>
+              <button onclick="closemodal()"  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+             <label for="">Enter your Full name: </label> <br>
+             <input  style="width: 100%;" type="text" name="" id="fullname"><br>
+             <label for="start">Start date:</label> <br>
+            <input  type="date" id="start" name="dateNsc" value="dateNsc" /> <br>
+            <form id="sex1" action="">
+
+                <input onclick="checkme(this)"type="radio" id="sex" name="sex" value="Female">
+                <label for="sex">Female</label><br>
+                <input onclick="checkme(this)" type="radio" id="sex" name="sex" value="Male">
+                <label for="age3">Male</label><br><br>
+            </form>
+            
+            
+               
+
+           
+            </div>
+            <label for="">Fonction</label>
+            <select  name="" id="fonction">
+                <option  class="fullname" value="Formateur">Formateur/Formatrice</option> 
+                <option value="Aprenant">Aprenant/Aprenante</option> 
+                <option value="Chef de projet">Chef de projet</option>
+                <option value="Responsable de fabric">Responsable de fabric</option>
+            </select>
+            <div class="modal-footer">
+              <button onclick="closemodal()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button onclick="confirm()" type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+
 <div class="placeholder">
     <div class="container">
         <div class="item">
@@ -14,8 +58,7 @@
                 <h1  id="tayeb">Formateurs</h1>
             </div>
             <div class="element-container"  class="foramteur">
-                <div id="cardformateur"> 
-
+                <div id="cardformateur">
                 </div>
                 <h1 id="formateurplus" class="plus"> + </h1>
             </div>
@@ -49,12 +92,27 @@
             <div class="element-container" class="add">
                 <div id="cardchefproject">
                 </div>
+                
                 <h1 id="projectchefplus"  class="plus">+</h1>
             </div>
         </div>
     </div>
-    <div  id="personnedata"  class="perssones">
-    </div>
+    <div    class="perssones">
+        <div id="personnedata">
+            <div class="kamal">
+
+            </div>
+
+        </div>
+        <div class="fatherbutton">
+            <button onclick="showmodal()" class="adding">add persone</button>
+        </div>
+
+    
+      <!-- Modal parth -->
+      
+   
 <script src="file.js"></script>
+<script src="modal.js"></script>
 </body>
 </html>

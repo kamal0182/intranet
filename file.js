@@ -1,46 +1,4 @@
-// let formateur = document.querySelector(".foramteur")
-// let  cardforma = document.getElementById("formateur")
-// let aprennantes = document.getElementById("app")
-// let alpha = document.querySelector(".perssones")
-// console.log(formateur)
-// let persone = document.querySelectorAll(".myimg")
-// console.log(persone)
-// let dragitem ;
-// let addid ;
-// let counter = 0  ; 
-//     for(let ele of persone){
-//         console.log(ele)
-//     ele.addEventListener('dragstart',function(){
-//           cardforma.style.color = "black"
-//             dragitem = this ;
-//             addid = this
-//             console.log("kamal")    
-//     })
-//     ele.addEventListener ('dragend', function(){
-//         dragitem = null ;
-//         cardforma.style.color = "black"
-//         console.log("kamal")
-//     })
-//     formateur.addEventListener('dragover',function(e){
-//             if(formateur.children.length != 2 && addid.id ==="1"){
-//               cardforma.style.color = "green"
-//               e.preventDefault()
-//             }
-//             else {
-//               cardforma.style.color = "red"
-//             }    
-//         })
-//         formateur.addEventListener('dragleave',function(e){
-//            cardforma.style.color = "black"
-//         })
-//         formateur.addEventListener('drop',function(){
-//             formateur.append(dragitem)
-//             counter ++;
-//             cardforma.style.color = "black"
-//         })
 
-         
-//     }
 fetch("file.json")
 .then(response => response.json())
 .then(data =>{
@@ -67,8 +25,8 @@ function showdataperssone(info){
             if(element.prenom == undefined) element.prenom = ""
             
             let div2 = `
-            <div id= "droit"   style="color : ${stylecolor} "  class="datapersone">
-                        <img id="img1" src="icons8-tour-50.png" alt="">
+            <div id= "droit" class="mydroit"  class="${element.fonction}" style="color : ${stylecolor} "  class="datapersone" >
+                        <img id="img1" src="img/OIP.jpg"  alt="">
                         <div id="para" class="personne2">
                         <h1>${element.nom} ${element.prenom} </h1>
                         <p>${element.dateNaissance}</p>
@@ -92,8 +50,6 @@ document.getElementById("formateurplus").addEventListener("click",function(){
   
 document.getElementById("personnedata").addEventListener("click",function(e){
   if(checkerclick ===1 ){
-
-  
   if(addtoformateur){
     let myelement = e.target.closest("#droit").children
     if(myelement[1].children[2].innerHTML == "formateur" || myelement[1].children[2].innerHTML == "formatrice"){
@@ -101,6 +57,7 @@ document.getElementById("personnedata").addEventListener("click",function(e){
         document.getElementById("cardformateur").appendChild(e.target.closest("#droit"))
         e.target.closest("#droit").innerHTML += (deletelemnt)
       }
+     
     else{
       setTimeout(() => {
         document.getElementById("tayeb").innerHTML = "you can add just one Formateur"
@@ -113,6 +70,18 @@ document.getElementById("personnedata").addEventListener("click",function(e){
     }
       console.log("you can add just one element")
     }
+    else{
+      setTimeout(() => {
+        document.getElementById("tayeb").innerHTML = "you can add just  Formateurs"
+        document.getElementById("tayeb").style.backgroundColor = "red"
+        document.getElementById("tayeb").style.color = "white"
+        setTimeout(() => {
+          document.getElementById("tayeb").innerHTML = "Formateurs"
+          document.getElementById("tayeb").style.backgroundColor = "white"
+           document.getElementById("tayeb").style.color = "black"
+        }, 1000 );
+      }, 1000);
+    }
     addtoformateur = false
     }
   }
@@ -124,14 +93,13 @@ let addtofabrespo = false
 
 document.getElementById("rspofabrplus").addEventListener("click",function(e){
   addtofabrespo = true
-  checker = 2
+  checkerclick = 2
+
   
 })
 
 document.getElementById("personnedata").addEventListener("click",function(e){
-  if(checkerclick === 2){
-
-  
+  if(checkerclick == 2){  
   if(addtofabrespo){
     let myelement = e.target.closest("#droit").children
     if(myelement[1].children[2].innerHTML == "Responsable de fabrique" ){
@@ -160,7 +128,7 @@ document.getElementById("apprenant").addEventListener("click",function(e){
   addapprt = true
 })
 document.getElementById("personnedata").addEventListener("click",function(e){
-  if(checkerclick === 3 ){
+  if(checkerclick === 3){
   if(addapprt){
     let myelement = e.target.closest("#droit").children
     if(myelement[1].children[2].innerHTML == "Aprenant" || myelement[1].children[2].innerHTML == "Aprenante" ){
@@ -220,5 +188,8 @@ document.getElementById("personnedata").addEventListener("click",function(e){
 function delet(that){
   document.getElementById("personnedata").appendChild(that.closest("#droit"))
   that.closest("#droit").removeChild(that)
-
 }
+
+
+
+
