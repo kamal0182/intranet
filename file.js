@@ -68,7 +68,7 @@ document.getElementById("personnedata").addEventListener("click",function(e){
         }, 1000 );
       }, 1000);
     }
-      console.log("you can add just one element")
+      
     }
     else{
       setTimeout(() => {

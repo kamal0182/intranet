@@ -27,13 +27,14 @@ function confirm() {
                                 fonctionvalue = "Formatrice" 
                             }
                             if(valuecheck == "Female" && fonctionvalue == "Aprenant"){
-                            
                                 fonctionvalue = "Aprenante"
                             }
-                           
-                            console.log(fonctionvalue)
+                            else if(valuecheck == "Male" && fonctionvalue == "Aprenant"){
+                                
+                                fonctionvalue = "Aprenant"
+                            }
         let div2 = `
-                <div id= "droit"   style="color :${color(fonctionvalue)};"    class="datapersone">
+                <div id= "droit"   style="color :${color(fonctionvalue)};" onclick="yesme(this)"    class="datapersone">
                 <img id="img1" style="width:45px; height:45px" src="img/OIP.jpg"  alt="">
                 <div id="para" class="personne2">
                 <h1>${document.getElementById("fullname").value}  </h1>
@@ -60,6 +61,8 @@ function closemodal(){
 }
 let drageme ;
 let elementfonction ; 
+let deletelemnt1 = `<img id="delet" onclick="delet(this)" src="img/icons8-supprimer-30.png" alt="">`
+let container1 =  document.getElementById("personnedata")
 function yesme(me){
     me.addEventListener("dragstart",function(){
         drageme = this 
@@ -68,13 +71,13 @@ function yesme(me){
         console.log("kamal")
     })
     me.addEventListener("dragend",function(e){
-        drageme = null
+        drageme = null  
         
     })
+  
     document.getElementById("cardrespofab").addEventListener("dragover",function(e){
        
        if(elementfonction[1].children[2].innerHTML == "Responsable de fabrique"){
-
            e.preventDefault();
        }
        
@@ -117,8 +120,14 @@ document.getElementById("cardapprenant").addEventListener("drop",function(e){
 document.getElementById("cardchefproject").addEventListener("drop",function(e){
     document.getElementById("cardchefproject").appendChild(drageme)
    })
-
+   container1.addEventListener("dragover",function(e){
+    e.preventDefault();
+   })
+   container1.addEventListener("drop",function(e){
+    container1.appendChild(drageme)
+   })
 }
+
 
 
 
