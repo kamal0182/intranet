@@ -46,12 +46,12 @@ function confirm() {
                 document.querySelector(".modal").style.display = "none"
             }
         }
-        
         document.getElementById("start").value = ""
         valuecheck = "undefined"
         document.getElementById("fullname").value = ""
     }   
 }
+
 function validation(name){
     let patern = /^[a-z A-Z]+[a-z A-Z]+$/
     if(patern.test(name)) return true
@@ -74,7 +74,7 @@ function yesme(me){
         drageme = null  
         
     })
-  
+}
     document.getElementById("cardrespofab").addEventListener("dragover",function(e){
        
        if(elementfonction[1].children[2].innerHTML == "Responsable de fabrique"){
@@ -85,6 +85,9 @@ function yesme(me){
 })
 document.getElementById("cardrespofab").addEventListener("drop",function(e){
     document.getElementById("cardrespofab").appendChild(drageme)
+    drageme.innerHTML += deletelemnt1
+    
+
 })
 //  Drag and drob for formateurs
 document.getElementById("cardformateur").addEventListener("dragover",function(e){
@@ -99,26 +102,25 @@ document.getElementById("cardformateur").addEventListener("dragover",function(e)
 })
 document.getElementById("cardformateur").addEventListener("drop",function(e){
  document.getElementById("cardformateur").appendChild(drageme)
+ drageme.innerHTML += deletelemnt1
 })
 document.getElementById("cardapprenant").addEventListener("dragover",function(e){
-       
     if(elementfonction[1].children[2].innerHTML == "Aprenant"){
-
         e.preventDefault();
     } 
 })
 document.getElementById("cardapprenant").addEventListener("drop",function(e){
     document.getElementById("cardapprenant").appendChild(drageme)
+    drageme.innerHTML += deletelemnt1
    })
    document.getElementById("cardchefproject").addEventListener("dragover",function(e){
-       
     if(elementfonction[1].children[2].innerHTML == "Chef de Projet"){
-
         e.preventDefault();
-    } 
+    }
 })
 document.getElementById("cardchefproject").addEventListener("drop",function(e){
     document.getElementById("cardchefproject").appendChild(drageme)
+    drageme.innerHTML += deletelemnt1
    })
    container1.addEventListener("dragover",function(e){
     e.preventDefault();
@@ -126,7 +128,7 @@ document.getElementById("cardchefproject").addEventListener("drop",function(e){
    container1.addEventListener("drop",function(e){
     container1.appendChild(drageme)
    })
-}
+
 
 
 

@@ -3,14 +3,14 @@ fetch("file.json")
 .then(response => response.json())
 .then(data =>{
   showdataperssone(data)
+  localStorage.setItem("perssonesdata",JSON.stringify(data.formateur))
+}).then(data => {
+  localStorage.setItem("perssonesdata",JSON.stringify(data.apprennant))
 })
-function color(data){
-  if(data.slice(-3) == "ice" || data.slice(-3) == "nte"){
-    return "rose"
-  }
-  else return "blue"
-}
+
 let counter = 0 ;
+
+let elementlocalstorage ;
 function showdataperssone(info){
         let container = document.getElementById("personnedata")
         for(let ele in info){
@@ -23,7 +23,11 @@ function showdataperssone(info){
             }
             else stylecolor = color(element.fonction)
             if(element.prenom == undefined) element.prenom = ""
-            
+             let mylocalstoragearray = {
+              "fullname" : `${element.nom} ${element.prenom}` ,
+              "date" :  `${element.dateNaissance}` ,
+              "fonction" : `${element.fonction}` 
+            }
             let div2 = `
             <div id= "droit" class="mydroit" onclick="yesme(this)"  class="${element.fonction}" style="color : ${stylecolor} "  class="datapersone" >
                         <img id="img1" src="img/OIP.jpg"  alt="">
@@ -37,7 +41,12 @@ function showdataperssone(info){
                   container.innerHTML += div2
           })
         }
+      
+         
+            
 }
+
+
 
 let deletelemnt = `<img id="delet" onclick="delet(this)"  src="img/icons8-supprimer-30.png" alt="">`
 let addtoformateur = false 
@@ -76,8 +85,8 @@ document.getElementById("personnedata").addEventListener("click",function(e){
         document.getElementById("tayeb").style.backgroundColor = "red"
         document.getElementById("tayeb").style.color = "white"
         setTimeout(() => {
-          document.getElementById("tayeb").innerHTML = "Formateurs"
-          document.getElementById("tayeb").style.backgroundColor = "white"
+           document.getElementById("tayeb").innerHTML = "Formateurs"
+           document.getElementById("tayeb").style.backgroundColor = "white"
            document.getElementById("tayeb").style.color = "black"
         }, 1000 );
       }, 1000);
@@ -85,7 +94,6 @@ document.getElementById("personnedata").addEventListener("click",function(e){
     addtoformateur = false
     }
   }
-  
 })
 let addtofabrespo = false
 
