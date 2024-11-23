@@ -1,11 +1,11 @@
 body {
     background-color: white;
 }
-.placeholder{
+.placeholder1{
     display: grid;
     grid-template-columns: 1fr 400px;
 }
-.container {
+.container1 {
     padding: 10px;
     border: 1px solid black  ;
     display: grid   ;
@@ -20,7 +20,7 @@ body {
     display: flex ;
     justify-content: center;
 }
-.header {
+.header1 {
     border: 1px solid black ;
 }
 .fatherbutton{
@@ -94,8 +94,13 @@ img  {
     justify-content: start;
    
 }
+.element-container { 
+    display: grid;
+    grid-template-rows:  1fr auto;
+}
 .cardformateur {
     width: 100%;
+  
     display: flex;
     flex-direction: column;
 }

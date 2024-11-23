@@ -13,7 +13,7 @@
             "id":2,
             "nom" : "salma",
             "prenom": "tergui",
-            "niveau":"A1",
+            
             "fonction": "formatrice",
             "dateNaissance": "19-01-2002"
         },

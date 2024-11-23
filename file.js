@@ -6,7 +6,7 @@ fetch("file.json")
 })
 function color(data){
   if(data.slice(-3) == "ice" || data.slice(-3) == "nte"){
-    return "red"
+    return "rose"
   }
   else return "blue"
 }
@@ -25,7 +25,7 @@ function showdataperssone(info){
             if(element.prenom == undefined) element.prenom = ""
             
             let div2 = `
-            <div id= "droit" class="mydroit"  class="${element.fonction}" style="color : ${stylecolor} "  class="datapersone" >
+            <div id= "droit" class="mydroit" onclick="yesme(this)"  class="${element.fonction}" style="color : ${stylecolor} "  class="datapersone" >
                         <img id="img1" src="img/OIP.jpg"  alt="">
                         <div id="para" class="personne2">
                         <h1>${element.nom} ${element.prenom} </h1>
@@ -87,8 +87,6 @@ document.getElementById("personnedata").addEventListener("click",function(e){
   }
   
 })
-
-
 let addtofabrespo = false
 
 document.getElementById("rspofabrplus").addEventListener("click",function(e){
@@ -149,6 +147,7 @@ document.getElementById("personnedata").addEventListener("click",function(e){
     addapprt = false
     }
   }
+  
 })
 //  chef de project 
 let addchefdeproject = false
@@ -184,11 +183,37 @@ document.getElementById("personnedata").addEventListener("click",function(e){
   }
 
   })
-  
 function delet(that){
   document.getElementById("personnedata").appendChild(that.closest("#droit"))
   that.closest("#droit").removeChild(that)
 }
+// let formateur1 = document.getElementById("formateurplus")
+// let formateur = document.getElementById("cardformateur")
+// let mydrageelement = document.querySelectorAll("#droit")
+//  let addid ;
+//  let dragitem ;
+// for(let ele of mydrageelement){
+//     console.log(ele)
+//     ele.addEventListener('dragstart',function(e){
+//         dragitem = this ;
+      
+
+//   })
+
+//   ele.addEventListener('dragend',function(e){
+//     dragitem = null ;
+//   })
+
+// }
+// formateur.addEventListener('dragover',function(e){
+//     console.log("younes")
+//     e.preventDefault()
+// })    
+// formateur.addEventListener('drop',function(e){
+//     console.log("kamal")
+
+// formateur.append(dragitem)
+// })
 
 
 
