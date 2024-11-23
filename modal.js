@@ -58,22 +58,66 @@ function validation(name){
 function closemodal(){
     document.querySelector(".modal").style.display = "none"
 }
-let drageme
+let drageme ;
+let elementfonction ; 
 function yesme(me){
     me.addEventListener("dragstart",function(){
         drageme = this 
+        elementfonction = this.children
+        console.log(elementfonction[1].children[2].innerHTML)
         console.log("kamal")
     })
-    me.addEventListener("dragend",function(){
+    me.addEventListener("dragend",function(e){
         drageme = null
         
     })
     document.getElementById("cardrespofab").addEventListener("dragover",function(e){
-        e.preventDefault();
+       
+       if(elementfonction[1].children[2].innerHTML == "Responsable de fabrique"){
+
+           e.preventDefault();
+       }
+       
+       
 })
 document.getElementById("cardrespofab").addEventListener("drop",function(e){
     document.getElementById("cardrespofab").appendChild(drageme)
 })
+//  Drag and drob for formateurs
+document.getElementById("cardformateur").addEventListener("dragover",function(e){
+       
+    if(document.getElementById("cardformateur").children.length !=  1 ){
+    if(elementfonction[1].children[2].innerHTML == "formateur" || elementfonction[1].children[2].innerHTML == "formatrice")
+            e.preventDefault();
+        
+    }
+    
+    
+})
+document.getElementById("cardformateur").addEventListener("drop",function(e){
+ document.getElementById("cardformateur").appendChild(drageme)
+})
+document.getElementById("cardapprenant").addEventListener("dragover",function(e){
+       
+    if(elementfonction[1].children[2].innerHTML == "Aprenant"){
+
+        e.preventDefault();
+    } 
+})
+document.getElementById("cardapprenant").addEventListener("drop",function(e){
+    document.getElementById("cardapprenant").appendChild(drageme)
+   })
+   document.getElementById("cardchefproject").addEventListener("dragover",function(e){
+       
+    if(elementfonction[1].children[2].innerHTML == "Chef de Projet"){
+
+        e.preventDefault();
+    } 
+})
+document.getElementById("cardchefproject").addEventListener("drop",function(e){
+    document.getElementById("cardchefproject").appendChild(drageme)
+   })
+
 }
 
 
