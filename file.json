@@ -2,8 +2,8 @@
     "formateur":[
         {
             "id":1,
-            "nom" : "souini",
-            "prenom": "taib",
+            "nom" : "Souini",
+            "prenom": "Taib",
             "niveau":"A1",
             "fonction": "formateur",
             "dateNaissance": "12-01-1996"
@@ -12,21 +12,21 @@
          {
             "id":2,
             "nom" : "salma",
-            "prenom": "tergui",
+            "prenom": "Tergui",
             "fonction": "formatrice",
             "dateNaissance": "19-01-2002"
         },
          {
             "id":3,
             "nom" : "Ilyass",
-            "prenom": "chakir",
+            "prenom": "Chakir",
             "niveau":"A2",
             "fonction": "formateur",
             "dateNaissance": "19-01-1991"
         },
          {
             "id":4,
-            "nom" : "Hanae",
+            "nom" : "Marwane",
             "prenom": "",
             "niveau":"",
             "fonction": "Responsable de fabrique",
@@ -35,17 +35,16 @@
         },
          {
             "id":5,
-            "nom" : "mourad",
+            "nom" : "Mourad",
             "": "Jouhari",
             "niveau":"",
             "fonction": "Chef de Projet",
             "dateNaissance": "19-01-1995"
-    
         },
         {
             "id":4,
-            "nom" : "younes",
-            "prenom": "kamal",
+            "nom" : "Younes",
+            "prenom": "Kamal",
             "niveau":"",
             "fonction": "Responsable de fabrique",
             "dateNaissance": "19-01-1990"
@@ -54,15 +53,15 @@
          {
             "id":6,
             "nom" : "Abdhak ",
-            "prenom": "ghandour",
+            "prenom": "Ghandour",
             "niveau":"A1",
             "fonction": "Aprenant",
             "dateNaissance": "19-01-1996"
         },
          {
             "id":7,
-            "nom" : "yasmine",
-            "prenom": "Jaafar",
+            "nom" : "Yasmine",
+            "prenom": "Khafifi",
             "niveau":"A1",
             "fonction": "Aprenante",
             "dateNaissance": "19-01-2000"

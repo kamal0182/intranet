@@ -1,13 +1,11 @@
-body {
-    background-color: white;
-}
+
 .placeholder1{
     display: grid;
     grid-template-columns: 1fr 400px;
 }
 .container1 {
     padding: 10px;
-    border: 1px solid black  ;
+   
     display: grid   ;
     grid-template-columns: 1fr  1fr;
     row-gap: 20px ;
@@ -21,7 +19,8 @@ body {
     justify-content: center;
 }
 .header1 {
-    border: 1px solid black ;
+    
+    font-size: 16px;
 }
 .fatherbutton{
    
@@ -36,13 +35,16 @@ body {
     border-radius: 8px;
     margin-top: 10px;
 }
+#headercherfproject , #headerapprenant ,#headercherfproject,#tayeb,#responsable , .plus{
+    font-size: 40px;
+}
 .adding:hover {
     background-color: white;
     color: black;
 
 }
 .item {
-    border: 1px solid black;
+    
     display: grid;
     grid-template-rows: auto 1fr;
 }
@@ -58,7 +60,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid black;   
+      
 }
 #droit {
     display: grid;
@@ -71,6 +73,9 @@ img  {
     width: 45px ;
     height: 50px;
     border-radius: 50%;
+}
+#img1 {
+    align-self: center;
 }
 #delet {
     width: 30px;
@@ -104,12 +109,7 @@ img  {
     display: flex;
     flex-direction: column;
 }
-.element-container {
-   border-radius:  8px;
-    border: 1px solid black;
-    
-   
-}
+
 .personnedata{
     border-radius:2px solid black;
     border-radius: 8px;

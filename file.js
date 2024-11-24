@@ -29,12 +29,12 @@ function showdataperssone(info){
               "fonction" : `${element.fonction}` 
             }
             let div2 = `
-            <div id= "droit" class="mydroit" onclick="yesme(this)"  class="${element.fonction}" style="color : ${stylecolor} "  class="datapersone" >
+            <div id= "droit" class="mydroit text-md mt-2 mb-2 p-2 bg-slate-300 shadow-lg 	  rounded-md " onclick="yesme(this)"   style="color : ${stylecolor} "  class="datapersone " >
                         <img id="img1" src="img/OIP.jpg"  alt="">
                         <div id="para" class="personne2">
-                        <h1>${element.nom} ${element.prenom} </h1>
-                        <p>${element.dateNaissance}</p>
-                        <p id="fonction">${element.fonction}</p>
+                        <h1 class="font-bold" style="font-size: 20px;">${element.nom} ${element.prenom} </h1>
+                        <p class="text-black" >${element.dateNaissance}</p>
+                        <p class="text-black"  id="fonction">${element.fonction}</p>
                         </div>
                   </div>`
                   counter++;
@@ -65,31 +65,34 @@ document.getElementById("personnedata").addEventListener("click",function(e){
       if(document.getElementById("cardformateur").children.length < 1){
         document.getElementById("cardformateur").appendChild(e.target.closest("#droit"))
         e.target.closest("#droit").innerHTML += (deletelemnt)
+        swal(`${myelement[1].children[0].innerHTML}`, "has been successfully added!", "success");
       }
      
     else{
-      setTimeout(() => {
-        document.getElementById("tayeb").innerHTML = "you can add just one Formateur"
-        document.getElementById("tayeb").style.backgroundColor = "red"
-        setTimeout(() => {
-          document.getElementById("tayeb").innerHTML = "Formateurs"
-          document.getElementById("tayeb").style.backgroundColor = "white"
-        }, 1000 );
-      }, 1000);
+      swal("", "You can add just one Formateur !", "warning");
+      // setTimeout(() => {
+      //   document.getElementById("tayeb").innerHTML = "you can add just one Formateur"
+      //   document.getElementById("tayeb").style.backgroundColor = "red"
+      //   setTimeout(() => {
+      //     document.getElementById("tayeb").innerHTML = "Formateurs"
+      //     document.getElementById("tayeb").style.backgroundColor = "white"
+      //   }, 1000 );
+      // }, 1000);
     }
       
     }
     else{
-      setTimeout(() => {
-        document.getElementById("tayeb").innerHTML = "you can add just  Formateurs"
-        document.getElementById("tayeb").style.backgroundColor = "red"
-        document.getElementById("tayeb").style.color = "white"
-        setTimeout(() => {
-           document.getElementById("tayeb").innerHTML = "Formateurs"
-           document.getElementById("tayeb").style.backgroundColor = "white"
-           document.getElementById("tayeb").style.color = "black"
-        }, 1000 );
-      }, 1000);
+      swal("", "You can add just  Formateurs!", "warning");
+      // setTimeout(() => {
+      //   document.getElementById("tayeb").innerHTML = "you can add just  Formateurs"
+      //   document.getElementById("tayeb").style.backgroundColor = "red"
+      //   document.getElementById("tayeb").style.color = "white"
+      //   setTimeout(() => {
+      //      document.getElementById("tayeb").innerHTML = "Formateurs"
+      //      document.getElementById("tayeb").style.backgroundColor = "white"
+      //      document.getElementById("tayeb").style.color = "black"
+      //   }, 1000 );
+      // }, 1000);
     }
     addtoformateur = false
     }
@@ -111,16 +114,18 @@ document.getElementById("personnedata").addEventListener("click",function(e){
     if(myelement[1].children[2].innerHTML == "Responsable de fabrique" ){
       document.getElementById("cardrespofab").appendChild(e.target.closest("#droit"))
       e.target.closest("#droit").innerHTML += (deletelemnt)
+      swal(`${myelement[1].children[0].innerHTML}`, "has been successfully added!", "success");
     }
     else{
-      setTimeout(() => {
-        document.getElementById("responsable").innerHTML = "you  can just  add responsable de fabric"
-        document.getElementById("responsable").style.backgroundColor = "red"
-            setTimeout(() => {
-                document.getElementById("responsable").innerHTML = "Responsable de fabrique"
-                document.getElementById("responsable").style.backgroundColor = "white"
-              }, 1000 );
-      }, 1000);
+      swal("", "You can add just  Responsable de Fabric!", "warning");
+      // setTimeout(() => {
+      //   document.getElementById("responsable").innerHTML = "you  can just  add responsable de fabric"
+      //   document.getElementById("responsable").style.backgroundColor = "red"
+      //       setTimeout(() => {
+      //           document.getElementById("responsable").innerHTML = "Responsable de fabrique"
+      //           document.getElementById("responsable").style.backgroundColor = "white"
+      //         }, 1000 );
+      // }, 1000);
     }
     addtofabrespo = false
     }
@@ -141,16 +146,18 @@ document.getElementById("personnedata").addEventListener("click",function(e){
 
       document.getElementById("cardapprenant").appendChild(e.target.closest("#droit"))
       e.target.closest("#droit").innerHTML += (deletelemnt)
+      swal(`${myelement[1].children[0].innerHTML}`, "has been successfully added!", "success");
     }
     else{
-      setTimeout(() => {
-        document.getElementById("headerapprenant").innerHTML = "you  can just apprenants  "
-        document.getElementById("header").style.backgroundColor = "red"
-            setTimeout(() => {
-                document.getElementById("headerapprenant").innerHTML = "Responsable de fabrique"
-                document.getElementById("header").style.backgroundColor = "white"
-              }, 1000 );
-      }, 1000);
+      swal("", "You can add just Apprenants!", "warning");
+      // setTimeout(() => {
+      //   document.getElementById("headerapprenant").innerHTML = "you  can just apprenants  "
+      //   document.getElementById("header").style.backgroundColor = "red"
+      //       setTimeout(() => {
+      //           document.getElementById("headerapprenant").innerHTML = "Responsable de fabrique"
+      //           document.getElementById("header").style.backgroundColor = "white"
+      //         }, 1000 );
+      // }, 1000);
     }
     addapprt = false
     }
@@ -175,16 +182,18 @@ document.getElementById("personnedata").addEventListener("click",function(e){
 
       document.getElementById("cardchefproject").appendChild(e.target.closest("#droit"))
       e.target.closest("#droit").innerHTML += (deletelemnt)
+      swal(`${myelement[1].children[0].innerHTML}`, "has been successfully added!", "success");
     }
     else{
-      setTimeout(() => {
-        document.getElementById("headercherfproject").innerHTML = "you  can just add chef de project  "
-        document.getElementById("headercherfproject").style.backgroundColor = "red"
-            setTimeout(() => {
-                document.getElementById("headercherfproject").innerHTML = "chef de project"
-                document.getElementById("headercherfproject").style.backgroundColor = "white"
-              }, 1000 );
-      }, 1000);
+      swal("", "You can add just  Chef de Project!", "warning");
+      // setTimeout(() => {
+      //   document.getElementById("headercherfproject").innerHTML = "you  can just add chef de project  "
+      //   document.getElementById("headercherfproject").style.backgroundColor = "red"
+      //       setTimeout(() => {
+      //           document.getElementById("headercherfproject").innerHTML = "chef de project"
+      //           document.getElementById("headercherfproject").style.backgroundColor = "white"
+      //         }, 1000 );
+      // }, 1000);
     }
     addchefdeproject = false
     }
